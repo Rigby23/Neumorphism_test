@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:neumorphism_test/reutilizable/app_colors.dart';
 
-class RoundButton extends StatelessWidget {
-  RoundButton({
+class RoundButtonUntapped extends StatelessWidget {
+  final double size;
+  RoundButtonUntapped({
     super.key,
+    required this.size,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(4),
+      padding: EdgeInsets.all(20.0),
       child: Container(
-        padding: const EdgeInsets.all(20),
+        height: size,
+        width: size,
         decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: shadowGradient300,
@@ -44,7 +47,6 @@ class RoundButton extends StatelessWidget {
                 ])),
         child: const Icon(
           Icons.favorite_outline_outlined,
-          size: 37,
           color: shadowGradient800,
         ),
       ),
