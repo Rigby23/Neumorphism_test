@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:neumorphism_test/reutilizable/app_colors.dart';
 
 class RoundButtonUntapped extends StatelessWidget {
-  final double size;
+  final double height;
+  final double width;
   RoundButtonUntapped({
     super.key,
-    required this.size,
+    required this.height,
+    required this.width,
   });
 
   @override
@@ -13,12 +15,12 @@ class RoundButtonUntapped extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Container(
-        height: size,
-        width: size,
-        decoration: const BoxDecoration(
-            shape: BoxShape.circle,
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
             color: shadowGradient300,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                   color: shadowGradient600,
                   offset: Offset(4.0, 4.0),
@@ -30,7 +32,7 @@ class RoundButtonUntapped extends StatelessWidget {
                   blurRadius: 15.0,
                   spreadRadius: 1.0),
             ],
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [

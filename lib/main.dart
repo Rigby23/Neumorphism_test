@@ -68,12 +68,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   size: 60,
                 )),*/
             Padding(
-              padding: const EdgeInsets.only(bottom: 18.0, left: 8),
+              padding: EdgeInsets.only(bottom: 18.0, left: 8),
               child: TappedListener(
-                tapped: const RoundButtonTapped(
-                  size: 50,
+                tapped: RoundButtonTapped(
+                  height: 60,
+                  width: 300,
                 ),
-                unTapped: RoundButtonUntapped(size: 50),
+                unTapped: RoundButtonUntapped(
+                  height: 60,
+                  width: 300,
+                ),
               ),
             )
 

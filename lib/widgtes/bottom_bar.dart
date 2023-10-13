@@ -19,7 +19,8 @@ class _BottomBarState extends State<BottomBar> {
         children: [
           ...widget.icons.map((icon) => Expanded(
                   child: RoundButtonUntapped(
-                size: 50,
+                height: 50,
+                width: 50,
               )))
         ],
       ),
