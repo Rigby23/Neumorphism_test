@@ -1,7 +1,27 @@
 import 'package:flutter/material.dart';
 
 class FirstButton extends StatefulWidget {
-  const FirstButton({super.key});
+  final Color backgroundColor;
+  final Color lightShadow;
+  final Color darkShadow;
+  final double width;
+  final double height;
+  final double borderRadius;
+  final double distance;
+  final Widget child;
+  final double blur;
+
+  const FirstButton(
+      {super.key,
+      required this.backgroundColor,
+      required this.lightShadow,
+      required this.darkShadow,
+      required this.width,
+      required this.height,
+      required this.borderRadius,
+      required this.distance,
+      required this.child,
+      required this.blur});
 
   @override
   State<FirstButton> createState() => _FirstButtonState();
@@ -10,49 +30,50 @@ class FirstButton extends StatefulWidget {
 class _FirstButtonState extends State<FirstButton> {
   @override
   Widget build(BuildContext context) {
+    /// background const Color(0xffefeeee)
+    /// light shadow Color(0xffffffff)
+    /// dark shadow Color(0xffd2d1d1)
+    /// radius 43
+    /// distance 16.2
+    /// blur 31
     return Container(
-      width: 500.0,
-      height: 500.0,
-      color: const Color(0xffefeeee),
+      width: widget.width,
+      height: widget.height,
+      color: widget.backgroundColor,
       alignment: Alignment.center,
       transformAlignment: Alignment.center,
       child: Container(
-        color: const Color(0xffefeeee),
+        color: widget.backgroundColor,
         child: Container(
-          width: 178,
-          height: 178,
-          decoration: BoxDecoration(
-            color: const Color(0xffefeeee),
-            borderRadius: BorderRadius.circular(43),
-            gradient: const LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color(0xffffffff),
-                Color(0xffd2d1d1),
+            width: widget.width,
+            height: widget.height,
+            decoration: BoxDecoration(
+              color: widget.backgroundColor,
+              borderRadius: BorderRadius.circular(widget.borderRadius),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  widget.lightShadow,
+                  widget.darkShadow,
+                ],
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: widget.lightShadow,
+                  offset: Offset(-widget.distance, -widget.distance),
+                  blurRadius: widget.blur,
+                  spreadRadius: 0.0,
+                ),
+                BoxShadow(
+                  color: widget.darkShadow,
+                  offset: Offset(widget.distance, widget.distance),
+                  blurRadius: widget.blur,
+                  spreadRadius: 0.0,
+                ),
               ],
             ),
-            boxShadow: const [
-              BoxShadow(
-                color: Color(0xffffffff),
-                offset: Offset(-16.2, -16.2),
-                blurRadius: 31,
-                spreadRadius: 0.0,
-              ),
-              BoxShadow(
-                color: Color(0xffd2d1d1),
-                offset: Offset(16.2, 16.2),
-                blurRadius: 31,
-                spreadRadius: 0.0,
-              ),
-            ],
-          ),
-          child: const Icon(
-            Icons.access_time_outlined,
-            size: 59,
-            color: Color(0xffd2d1d1),
-          ),
-        ),
+            child: widget.child),
       ),
     );
   }

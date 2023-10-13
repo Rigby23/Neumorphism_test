@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:neumorphism_test/reutilizable/app_colors.dart';
-import 'package:neumorphism_test/utilities/normal_tapped.dart';
 import 'package:neumorphism_test/widgtes/round_buttons/round_button_tapped.dart';
 import 'package:neumorphism_test/widgtes/round_buttons/round_button_untapped.dart';
+
+import 'utilities/tapped_listener.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,22 +56,26 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         backgroundColor: shadowGradient300,
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            NormalTapped(
+            /*NormalTapped(
                 size: 20,
                 tapped: const RoundButtonTapped(
                   size: 60,
                 ),
                 unTapped: RoundButtonUntapped(
                   size: 60,
-                )),
-            /* Padding(
+                )),*/
+            Padding(
               padding: const EdgeInsets.only(bottom: 18.0, left: 8),
               child: TappedListener(
-                tapped: const RoundButtonTapped(),
-                unTapped: RoundButton(),
-              ),*/
+                tapped: const RoundButtonTapped(
+                  size: 50,
+                ),
+                unTapped: RoundButtonUntapped(size: 50),
+              ),
+            )
 
             // child: BottomBar(icons: [1, 2, 3, 4]),
             // )
