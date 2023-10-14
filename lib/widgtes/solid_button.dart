@@ -4,13 +4,14 @@ import 'package:neumorphism_test/reutilizable/app_colors.dart';
 
 class SolidButton extends StatefulWidget {
   final Color backgroundColor;
-  final double size;
+  final double height;
+  final double widht;
 
-  const SolidButton({
-    super.key,
-    required this.backgroundColor,
-    required this.size,
-  });
+  const SolidButton(
+      {super.key,
+      required this.backgroundColor,
+      required this.height,
+      required this.widht});
 
   @override
   State<SolidButton> createState() => _SolidButtonState();
@@ -21,7 +22,7 @@ class _SolidButtonState extends State<SolidButton> {
   @override
   Widget build(BuildContext context) {
     double blur = isPressed ? 5.0 : 30.0;
-    Offset distance = isPressed ? const Offset(10, 10) : const Offset(20, 20);
+    Offset distance = isPressed ? const Offset(10, 10) : const Offset(15, 15);
     return Listener(
       onPointerUp: (event) => setState(() {
         isPressed = false;
@@ -30,8 +31,8 @@ class _SolidButtonState extends State<SolidButton> {
         isPressed = true;
       }),
       child: SizedBox(
-        height: widget.size,
-        width: widget.size,
+        height: widget.height,
+        width: widget.widht,
         child: AnimatedContainer(
             duration: const Duration(milliseconds: 100),
             decoration: BoxDecoration(
@@ -41,7 +42,7 @@ class _SolidButtonState extends State<SolidButton> {
                   ///Light Shadow
                   BoxShadow(
                       blurRadius: blur,
-                      offset: -distance,
+                      offset: isPressed ? distance : -distance,
                       color: lightShadowColor,
                       inset: isPressed),
 
