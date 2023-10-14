@@ -23,31 +23,21 @@ class RoundButtonTapped extends StatelessWidget {
             color: Colors.white,
             boxShadow: const [
               BoxShadow(
-                  color: shadowGradient300,
-                  offset: Offset(4.0, 4.0),
-                  blurRadius: 15.0,
-                  spreadRadius: 1.0),
+                  color: shadowGradient200,
+                  offset: Offset(1.0, 1.0),
+                  blurRadius: 20.0,
+                  spreadRadius: 5.0),
               BoxShadow(
                   color: Colors.white,
-                  offset: Offset(-4.0, -4.0),
-                  blurRadius: 15.0,
-                  spreadRadius: 1.0),
+                  offset: Offset(-1.0, -1.0),
+                  blurRadius: 20.0,
+                  spreadRadius: 5.0),
             ],
-            gradient: const LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  shadowGradient200,
-                  shadowGradient300,
-                  shadowGradient400,
-                ],
-                stops: [
-                  0.85,
-                  0.99,
-                  1
-                ])),
+            gradient: const RadialGradient(
+                radius: 10,
+                colors: [shadowGradient200, shadowGradient200, Colors.white])),
         child: Container(
-          decoration: BoxDecoration(
+            decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: shadowGradient300,
               boxShadow: const [
@@ -55,31 +45,23 @@ class RoundButtonTapped extends StatelessWidget {
                     color: Colors.white,
                     offset: Offset(4.0, 4.0),
                     blurRadius: 15.0,
-                    spreadRadius: 1.0),
+                    spreadRadius: 4.0),
                 BoxShadow(
-                    color: shadowGradient600,
+                    color: shadowGradient500,
                     offset: Offset(-4.0, -4.0),
                     blurRadius: 15.0,
-                    spreadRadius: 1.0),
+                    spreadRadius: 4.0),
               ],
-              gradient: const LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    shadowGradient500,
-                    shadowGradient400,
-                    shadowGradient300,
-                  ],
-                  stops: [
-                    0.1,
-                    0.7,
-                    1
-                  ])),
-          child: const Icon(
-            Icons.favorite_outline_rounded,
-            color: shadowGradient700,
-          ),
-        ),
+            ),
+            child: Center(
+              child: const Text(
+                "Entrar",
+                style: TextStyle(
+                    color: shadowGradient500,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w700),
+              ),
+            )),
       ),
     );
   }
