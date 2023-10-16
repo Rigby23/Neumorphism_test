@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-const Color backgroundColor = Color(0xFFE7ECEF);
 const Color lightShadowColor = Colors.white;
 const Color darkShadowColor = Color(0xFFA7A9AF);
+
+const Color appBackgroundColor = Color(0xFF6AACD3);
 
 const Color shadowGradient800 = Color(0xFF424242);
 const Color shadowGradient700 = Color(0xFF616161);

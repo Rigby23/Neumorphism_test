@@ -51,16 +51,17 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: shadowGradient300,
+        backgroundColor: appBackgroundColor,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
                 child: SolidButton(
-              backgroundColor: backgroundColor,
+              backgroundColor: appBackgroundColor,
               height: 80,
-              widht: 250,
+              widht: 300,
+              child: Center(child: Text("Entrar")),
             )),
 
             // child: BottomBar(icons: [1, 2, 3, 4]),
