@@ -19,24 +19,16 @@ class SolidButton extends StatefulWidget {
 }
 
 Color generateLighterColor(Color backgroundColor) {
-  // Aumenta los componentes de color para obtener un tono más claro
-  final r = backgroundColor.red +
-      20; // Puedes ajustar el valor según tus preferencias.
-  final g = backgroundColor.green +
-      20; // Puedes ajustar el valor según tus preferencias.
-  final b = backgroundColor.blue +
-      20; // Puedes ajustar el valor según tus preferencias.
+  final r = backgroundColor.red + 20;
+  final g = backgroundColor.green + 20;
+  final b = backgroundColor.blue + 20;
   return Color.fromARGB(backgroundColor.alpha, r, g, b);
 }
 
 Color generateDarkerColor(Color backgroundColor) {
-  // Reduce los componentes de color para obtener un tono más oscuro
-  final r = backgroundColor.red -
-      20; // Puedes ajustar el valor según tus preferencias.
-  final g = backgroundColor.green -
-      20; // Puedes ajustar el valor según tus preferencias.
-  final b = backgroundColor.blue -
-      20; // Puedes ajustar el valor según tus preferencias.
+  final r = backgroundColor.red - 20;
+  final g = backgroundColor.green - 20;
+  final b = backgroundColor.blue - 20;
   return Color.fromARGB(backgroundColor.alpha, r, g, b);
 }
 
