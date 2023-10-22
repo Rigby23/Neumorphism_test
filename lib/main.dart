@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:neumorphism_test/reutilizable/app_colors.dart';
-import 'package:neumorphism_test/widgtes/solid_button.dart';
+import 'package:neumorphism_test/widgtes/neu_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,18 +50,18 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         backgroundColor: appBackgroundColor,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
-                child: SolidButton(
+                child: NeuButton(
               backgroundColor: appBackgroundColor,
               height: 80,
-              widht: 300,
-              child: Center(child: Text("Entrar")),
+              width: 300,
+              label: 'Enter',
             )),
 
             // child: BottomBar(icons: [1, 2, 3, 4]),
